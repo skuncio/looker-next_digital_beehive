@@ -1,5 +1,5 @@
 view: contentview {
-  sql_table_name: public.t8002_contentview ;;
+  sql_table_name: public.t8002_contentview_beehive ;;
 
   dimension: view_type {
     description: "PAGEVIEW or VIDEOVIEW"
