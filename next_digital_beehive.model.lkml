@@ -45,19 +45,19 @@ explore: view_agg_with_article {
 
 #explore: t8002_contentview {}
 
-explore: contentview {
+explore: contentview_bh {
   label: "3) Content Views Detail (2 mths by time)"
   view_label: "1. All Content Views"
   sql_always_where:  ${product} = 'Apple Daily' and ${region} in ('HK', 'TW') ;;
     join: content {
     view_label: "4. Content Object Meta Data"
-    sql_on: ${contentview.cid} = ${content.cid} and ${contentview.region} = ${content.region} and ${contentview.product} = ${content.product} and ${content.video_length} > 0 ;;
+    sql_on: ${cid} = ${content.cid} and ${region} = ${content.region} and ${product} = ${content.product} and ${content.video_length} > 0 ;;
     relationship: many_to_one
     type: left_outer
   }
   join: t1025_reg_prod_cid_title_join {
     view_label: "5. Current Title & Author"
-    sql_on: c8002_cid  = ${t1025_reg_prod_cid_title_join.c1025_cid} and c8002_product = ${t1025_reg_prod_cid_title_join.c1025_product} and c8002_region = ${t1025_reg_prod_cid_title_join.c1025_region} and ${contentview.view_type} = ${t1025_reg_prod_cid_title_join.imp_type}  ;;
+    sql_on: c8002_cid  = ${t1025_reg_prod_cid_title_join.c1025_cid} and c8002_product = ${t1025_reg_prod_cid_title_join.c1025_product} and c8002_region = ${t1025_reg_prod_cid_title_join.c1025_region} and view_type = ${t1025_reg_prod_cid_title_join.imp_type}  ;;
     relationship: many_to_one
     type: inner
   }

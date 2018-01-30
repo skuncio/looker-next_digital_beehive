@@ -1,4 +1,4 @@
-view: contentview {
+view: contentview_bh {
   sql_table_name: public.t8002_contentview_beehive ;;
 
   dimension: view_type {
