@@ -46,7 +46,7 @@ explore: view_agg_with_article {
 #explore: t8002_contentview {}
 
 explore: contentview_bh {
-  label: "3) Content Views Detail (2 mths by time)"
+  label: "3) HKAD & TWAD Content Views Detail (2 mths by time)"
   view_label: "1. All Content Views"
   sql_always_where:  ${product} = 'Apple Daily' and ${region} in ('HK', 'TW') ;;
     join: content {
