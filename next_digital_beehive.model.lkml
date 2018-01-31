@@ -14,7 +14,7 @@ datagroup: next_digital_beehive_default_datagroup {
 persist_with: next_digital_beehive_default_datagroup
 
 explore: t3016_seg_agg_cid_day {
-  label: "1) Content Imp Summary (historical by day)"
+  label: "1) HKAD & TWAD Content Imp Summary (historical by day)"
   view_label: "1. CID Views"
   sql_always_where:  ${c3016_product} in ('Apple Daily', 'AppleDaily', 'ADAILY', 'Apple Daily TW', 'ADAILY-IPAD', 'Apple Daily-IPAD') and ${c3016_region} in ('HK', 'TW') ;;
   join: t1025_reg_prod_cid_title_join {
@@ -26,7 +26,7 @@ explore: t3016_seg_agg_cid_day {
 }
 
 explore: view_agg_with_article {
-  label: "2) Content Summary by CID (2 mths by day)"
+  label: "2) HKAD & TWAD Content Summary by CID (2 mths by day)"
   view_label: "1. Article & Video Views - Summary"
   sql_always_where:  ${product} = 'Apple Daily' and ${region} in ('HK', 'TW') ;;
     join: t1025_reg_prod_cid_title_join {
@@ -64,7 +64,7 @@ explore: contentview_bh {
 }
 
 explore: t8050_user_content_by_day {
-  label: "4) Content Summary by Users (2 mths by day)."
+  label: "4) HKAD & TWAD Content Summary by Users (2 mths by day)."
   view_label: "1. Content & Users"
   join: t1025_reg_prod_cid_title_join {
     view_label: "3. Current Title & Author"
